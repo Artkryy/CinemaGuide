@@ -1,0 +1,234 @@
+.film {
+  position: relative;
+  display: flex;
+  padding-top: 106px;
+  padding-bottom: 122px;
+}
+
+.film__content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  position: relative;
+  z-index: 3;
+}
+
+.film__info-list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--text-color);
+}
+
+.info-list__info-item--rating {
+  position: relative;
+  padding: 4px 12px 4px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  border-radius: 16px;
+  background-color: var(--rating-color-green);
+  color: var(--light-color);
+}
+
+.info-list__rating-svg {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  transform: translateY(-50%);
+}
+
+.info-list__info-item--genre:not(:last-child) {
+  margin-right: 16px;
+}
+
+.film__title {
+  margin: 0;
+  margin-bottom: 16px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: var(--light-color);
+}
+
+.film__plot {
+  margin: 0;
+  margin-bottom: 60px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--text-color);
+}
+
+.film__action-list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.action-list__link {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  outline: none;
+  color: var(--light-color);
+  transition: color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+.action-list__link:focus-visible {
+  outline: 2px solid var(--link-hover);
+}
+
+.action-list__link--trailer {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.action-list__link--about-film {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: var(--bg-search);
+}
+
+.action-list__link--about-film:hover {
+  background-color: var(--light-color);
+  color: var(--black-color);
+}
+
+.action-list__link--like {
+  position: relative;
+  padding: 18px 32px;
+  border-radius: 28px;
+  background-color: var(--bg-search);
+}
+
+.action-list__link--like:hover {
+  background-color: var(--bg-search);
+}
+
+.action-list__like-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  fill: var(--light-color);
+  transform: translate(-50%, -50%);
+  transition: fill .3s ease-in-out;
+}
+
+.action-list__like-svg:hover {
+  fill: var(--link-hover);
+}
+
+.action-list__link--reset {
+  position: relative;
+  padding: 29px 33px;
+  border: none;
+  border-radius: 28px;
+  background-color: var(--bg-search);
+}
+
+.action-list__link--reset:hover {
+  background-color: var(--bg-search);
+}
+
+.action-list__reset-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform .3s ease-in-out;
+}
+
+.action-list__reset-svg:hover {
+  transform: rotate(0.5turn) translate(50%, 50%);
+}
+
+.film__film-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 830px;
+  height: 100%;
+}
+
+.film__bg-img {
+  position: relative;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.film__bg-img:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.50) 20.41%, rgba(0, 0, 0, 0.00) 100%);
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+.specifications {
+  font-size: 14px;
+  line-height: 165%;
+}
+
+.specifications__table-body {
+  width: 100%;
+}
+
+.specifications__item {
+  display: table-row;
+}
+
+.specifications__name {
+  width: 52.4%;
+  text-align: left;
+  vertical-align: top;
+  font-weight: 400;
+  line-height: 165%;
+  color: var(--color-grey);
+}
+
+.specifications__name-decor {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 100%;
+}
+
+.specifications__cell {
+  position: relative;
+  z-index: 1;
+  background: var(--color-white);
+}
+
+.specifications__name-decor::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 6px;
+  border-bottom: 1px dashed #888;
+}
+
+.specifications__prop {
+  width: 50%;
+  text-align: left;
+  text-wrap: nowrap;
+  vertical-align: bottom;
+}

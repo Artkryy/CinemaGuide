@@ -1,0 +1,30 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+.footer__copy {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  column-gap: 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer__copyright {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 24px;
+}

@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'Play';
+  src: local('Play-Regular'),
+    url('./assets/fonts/Play-Regular.woff2') format('woff2'),
+    url('./assets/fonts/Play-Regular.woff2') format('woff');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Play';
+  src: local('Play-Bold'),
+    url('./assets/fonts/Play-Bold.woff2') format('woff2'),
+    url('./assets/fonts/Play-Bold.woff') format('woff');
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: local('OpenSans-Bold'),
+    url('./assets/fonts/OpenSans-Bold.woff2') format('woff2'),
+    url('./assets/fonts/OpenSans-Bold.woff') format('woff');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  font-family: Play, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  --dark: #0a0b0b;
+  --light-color: #ffffff;
+  --black-color: #000000;
+
+  /* Auth */
+  --auth-bg: #ffffff;
+  --border-inp: #000000;
+  --btn-color: #6a5dc2;
+  --btn-hover: #8577e1;
+  --error-color: #ff7575;
+  --inp-focus: #b4a9ff;
+
+  /* Header */
+  --bg-search: #393b3c;
+  --search-text-color: rgba(255, 255, 255, 0.50);
+  --link-hover: #dc5dfc;
+    /* Main */
+    --text-color: rgba(255, 255, 255, 0.70);
+  --border-card: rgba(255, 255, 255, 0.25);
+  --card-shadow: rgba(255, 255, 255, 0.33);
+  --gap: 40px;
+  /* Rating */
+  --rating-color-green: #308e21;
+  /* font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
