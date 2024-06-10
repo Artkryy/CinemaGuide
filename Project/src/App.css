@@ -46,6 +46,7 @@ img, svg {
 }
 
 .btn {
+  margin-bottom: 24px;
   padding: 16px 48px;
   font-size: 18px;
   font-weight: 700;
@@ -57,4 +58,26 @@ img, svg {
 
 .btn:hover {
   background-color: var(--btn-hover);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-400px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
 }

@@ -51,17 +51,15 @@
   --bg-search: #393b3c;
   --search-text-color: rgba(255, 255, 255, 0.50);
   --link-hover: #dc5dfc;
-    /* Main */
-    --text-color: rgba(255, 255, 255, 0.70);
+  /* Main */
+  --text-color: rgba(255, 255, 255, 0.70);
   --border-card: rgba(255, 255, 255, 0.25);
   --card-shadow: rgba(255, 255, 255, 0.33);
   --gap: 40px;
   /* Rating */
   --rating-color-green: #308e21;
-  /* font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
+  /* Modal */
+  --modal-bg: rgba(0, 0, 0, 0.4)
 }
 
 body {
@@ -69,3 +67,4 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+

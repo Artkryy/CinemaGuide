@@ -19,6 +19,7 @@ export const registerUser = (
       name: name,
       surname: surname,
     }).toString(),
+    credentials: "include",
   }).then(() => undefined);
 };
 
@@ -32,15 +33,26 @@ export const loginUser = (email: string, password: string) => {
       email: email,
       password: password,
     }).toString(),
+    credentials: "include",
   })
     .then(validResponse)
-    .then(data => console.log(data))
-    .then(() => undefined)
+    .then(() => undefined);
+};
+
+export const logout = () => {
+  return fetch(`${API}/auth/logout`, {
+    method: "GET",
+    credentials: "include",
+  })
+    .then(validResponse)
+    .then(() => undefined);
 };
 
 export const fetchUser = () => {
-  return fetch(`${API}/profile`)
+  return fetch(`${API}/profile`, {
+    method: "GET",
+    credentials: "include",
+  })
     .then(validResponse)
-    .then((response) => response.json())
-    .then(data => console.log(data))
+    .then((response) => response.json());
 };

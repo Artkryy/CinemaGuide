@@ -6,12 +6,14 @@ type ResponseFilmByGenre = {
   data: Film[] | [];
   isError: boolean;
   isLoading: boolean;
+  refetch: () => void;
 }
 
 export const useFilmByGenre = (genre: string = ''): ResponseFilmByGenre => {
-  const { data = [], isError, isLoading } = useQuery({
+  const { data = [], isError, isLoading, refetch } = useQuery({
     queryKey: ['film', genre],
     queryFn: () => getFilmsByGenre(genre)
   });
-  return { data, isError, isLoading }
+  return { data, isError, isLoading, refetch }
 }
+

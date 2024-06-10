@@ -30,3 +30,7 @@
   row-gap: 64px;
   --offsets: 4
 }
+
+.detail-genres-page__btn {
+  position: relative;
+}

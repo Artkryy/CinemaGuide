@@ -4,14 +4,16 @@ import { Film } from '../../interfaces/Film';
 import { TopListSection } from './TopListSection/TopListSection';
 import { DetailFilm } from '../../Components/DetailFilm';
 import { useRandomFilm } from '../../hooks/useRandomFilm';
+import { User } from '../../interfaces/User';
 
 interface TFilmProps {
   film: Film;
   topFilms: Film[];
+  user: User | undefined;
+  setAuthActive: any;
 }
 
-export const MainPage: FC<TFilmProps> = ({ film, topFilms }) => {
-
+export const MainPage: FC<TFilmProps> = ({ film, topFilms, user, setAuthActive }) => {
   const [randomFilm, setRandomFilm] = useState(film);
   const { data, refetch } = useRandomFilm();
 
@@ -27,7 +29,7 @@ export const MainPage: FC<TFilmProps> = ({ film, topFilms }) => {
 
   return (
     <>
-      <DetailFilm film={randomFilm} aboutFilmBtn={true} resetBtn={true} handleResetRandomFilm={handleResetRandomFilm} />
+      <DetailFilm film={randomFilm} aboutFilmBtn={true} resetBtn={true} handleResetRandomFilm={handleResetRandomFilm} user={user} setAuthActive={setAuthActive} />
       <TopListSection films={topFilms || []} />
     </>
   )

@@ -1,6 +1,6 @@
 import { FC, HTMLAttributes } from 'react';
 import './Button.css'
-import { Loader } from '../../ui/Loader';
+import { Loader } from '../Loader';
 
 interface IButtonProps extends HTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;

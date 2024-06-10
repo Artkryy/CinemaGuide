@@ -1,0 +1,23 @@
+.action-list__link--like {
+  position: relative;
+  padding: 18px 32px;
+  border-radius: 28px;
+  background-color: var(--bg-search);
+}
+
+.action-list__link--like:hover {
+  background-color: var(--bg-search);
+}
+
+.action-list__like-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  fill: var(--light-color);
+  transform: translate(-50%, -50%);
+  transition: fill .3s ease-in-out;
+}
+
+.action-list__like-svg:hover {
+  fill: var(--link-hover);
+}

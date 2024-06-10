@@ -6,7 +6,7 @@ export const getAllGenres = (): Promise<string[]> =>
 
 export const getFilmsByGenre = async (genre: string): Promise<Film[]> => {
   try {
-    const response = await fetch(`${API}/movie?genre=${genre}&count=50&page=3`);
+    const response = await fetch(`${API}/movie?genre=${genre}`);
     if (!response.ok) {
       console.log('Error');
     }

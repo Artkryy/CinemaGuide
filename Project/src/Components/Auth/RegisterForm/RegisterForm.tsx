@@ -1,4 +1,4 @@
-import { FormEventHandler, useState } from 'react';
+import { FC, FormEventHandler, useState } from 'react';
 import './RegisterForm.css'
 import { FormField } from '../FormField';
 import * as EmailValidator from "email-validator";
@@ -7,7 +7,11 @@ import { useMutation } from '@tanstack/react-query';
 import { registerUser } from '../../../api/user';
 import { queryClient } from '../../../api/queryClient';
 
-export const RegisterForm = () => {
+interface TRegisterFormProps {
+  successRegister: any;
+}
+
+export const RegisterForm: FC<TRegisterFormProps> = ({ successRegister }) => {
   const [username, setUsername] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
@@ -42,6 +46,7 @@ export const RegisterForm = () => {
       setConfirmPasswordError('Пароли не совпадают')
     } else {
       registerMutation.mutate();
+      successRegister(true)
     }
   };
 

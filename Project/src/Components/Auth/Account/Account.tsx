@@ -14,7 +14,6 @@ export const Account = () => {
     },
     queryClient
   );
-
   switch (meQuery.status) {
     case 'pending':
       return <Loader />
