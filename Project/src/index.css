@@ -58,6 +58,8 @@
   --gap: 40px;
   /* Rating */
   --rating-color-green: #308e21;
+  --rating-color-red: #c82020;
+  --rating-color-yellow: #a59400;
   /* Modal */
   --modal-bg: rgba(0, 0, 0, 0.4)
 }
@@ -67,4 +69,3 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-

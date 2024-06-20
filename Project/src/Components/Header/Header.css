@@ -10,6 +10,7 @@
 .header__logo {
   display: flex;
   margin-right: 80px;
+  flex-shrink: 0;
 }
 
 .header__logo-img {
@@ -62,6 +63,7 @@
 
 .header__btn {
   position: relative;
+  margin-left: auto;
   outline: none;
   font-size: 24px;
   font-weight: 400;

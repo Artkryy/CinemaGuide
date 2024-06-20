@@ -1,6 +1,6 @@
 .header__label-search {
   position: relative;
-  margin-right: auto;
+  margin-right: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,10 +42,9 @@
   fill-opacity: 1;
 }
 
-/* .header__dropdown-wrap {
-  max-height: 500px;
-  overflow: scroll;
-} */
+.header__label-search--mobile {
+  transition: all .3s;
+}
 
 .header__dropdown {
   position: absolute;
@@ -76,7 +75,7 @@
 .dropdown__info-list {
   display: flex;
   align-items: center;
-  column-gap: 12px;
+  column-gap: 10px;
 }
 
 .dropdown__info-list .info-list__info-item {

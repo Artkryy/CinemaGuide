@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Film } from '../../interfaces/Film';
 import './DetailFilm.css';
 import { formatTime } from '../../utils/utils';
@@ -32,7 +32,15 @@ export const DetailFilm: FC<TDetailFilmProps> = ({
 
   const [modalActive, setModalActive] = useState(false)
   const [isFavorite, setFavorite] = useState(isFav)
+  const [matches, setMatches] = useState(
+    window.matchMedia("(min-width: 768px)").matches
+  )
 
+  useEffect(() => {
+    window
+      .matchMedia("(min-width: 768px)")
+      .addEventListener('change', e => setMatches(e.matches));
+  }, []);
 
   const handleFilmToFavorites = () => {
     if (user) {
@@ -62,13 +70,20 @@ export const DetailFilm: FC<TDetailFilmProps> = ({
     queryClient
   )
 
+
   return (
     <>
       <section className='film'>
         <div className="film__content">
           <ul className="film__info-list info-list list-reset">
             <li className="info-list__item">
-              <span className='info-list__info-item info-list__info-item--rating'>
+              <span
+                className={
+                  `info-list__info-item info-list__info-item--rating
+                ${film.tmdbRating >= 7.5 ? 'green' : ''}
+                ${film.tmdbRating <= 4 ? 'red' : ''}
+                ${film.tmdbRating > 4 && film.tmdbRating < 7.5 ? 'yellow' : ''}`
+                }>
                 <svg className='info-list__rating-svg' width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8.00105 12.1733L3.29875 14.8054L4.34897 9.51991L0.392578 5.86118L5.74394 5.22669L8.00105 0.333313L10.2581 5.22669L15.6095 5.86118L11.6531 9.51991L12.7033 14.8054L8.00105 12.1733Z" fill="white" />
                 </svg>
@@ -89,20 +104,20 @@ export const DetailFilm: FC<TDetailFilmProps> = ({
           </ul>
           <h1 className="film__title">{film.title}</h1>
           <h2 className="film__plot">{film.plot}</h2>
-          <ul className="film__action-list action-list list-reset">
-            <li className="action-list__item">
+          <ul className={aboutFilmBtn && resetBtn ? "film__action-list action-list list-reset" : "film__action-list film__action-list--mobile action-list list-reset"}>
+            <li className="action-list__item action-list__item--trailer">
               <a href='#' className="action-list__link btn action-list__link--trailer" onClick={() => setModalActive(true)}>Трейлер</a>
             </li>
             {aboutFilmBtn && (
-              <li className="action-list__item">
+              <li className="action-list__item action-list__item--about-film">
                 <Link to={`/randomFilm/${film.id}`} className="action-list__link btn action-list__link--about-film">О фильме</Link>
               </li>
             )}
-            <li className="action-list__item">
+            <li className="action-list__item action-list__item--like">
               <LikeBtn favoriteActive={isFavorite} handleFilmToFavorites={handleFilmToFavorites} />
             </li>
             {resetBtn && (
-              <li className="action-list__item">
+              <li className="action-list__item action-list__item--reset">
                 <button className="action-list__link action-list__link--reset" onClick={handleResetRandomFilm}>
                   <svg className='action-list__reset-svg' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 4C14.7486 4 17.1749 5.38626 18.6156 7.5H16V9.5H22V3.5H20V5.99936C18.1762 3.57166 15.2724 2 12 2C6.47715 2 2 6.47715 2 12H4C4 7.58172 7.58172 4 12 4ZM20 12C20 16.4183 16.4183 20 12 20C9.25144 20 6.82508 18.6137 5.38443 16.5H8V14.5H2V20.5H4V18.0006C5.82381 20.4283 8.72764 22 12 22C17.5228 22 22 17.5228 22 12H20Z" fill="white" />
@@ -111,9 +126,16 @@ export const DetailFilm: FC<TDetailFilmProps> = ({
               </li>)}
           </ul>
         </div>
-        <div className="film__film-img">
-          <div className='film__bg-img' style={{ backgroundImage: `url(${film.posterUrl})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'contain' }} ></div>
-        </div>
+        {matches && (
+          <div className="film__film-img">
+            <div className='film__bg-img' style={{ backgroundImage: `url(${film.posterUrl})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right center', backgroundSize: 'contain' }} ></div>
+          </div>
+        )}
+        {!matches && (
+          <div className="film__img">
+            <img src={film.posterUrl} alt={film.title} className="film__image" />
+          </div>
+        )}
       </section>
       <ModalTrailer active={modalActive} setActive={setModalActive} trailerUrl={film.trailerUrl} />
     </>

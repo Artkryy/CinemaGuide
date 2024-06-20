@@ -31,6 +31,8 @@ export const MainPage: FC<TFilmProps> = ({ film, topFilms, user, setAuthActive }
     <>
       <DetailFilm film={randomFilm} aboutFilmBtn={true} resetBtn={true} handleResetRandomFilm={handleResetRandomFilm} user={user} setAuthActive={setAuthActive} />
       <TopListSection films={topFilms || []} />
+      {/* {matches && (<h1>Big Screen</h1>)}
+      {!matches && (<h3>Small Screen</h3>)} */}
     </>
   )
 }

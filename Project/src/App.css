@@ -48,6 +48,7 @@ img, svg {
 .btn {
   margin-bottom: 24px;
   padding: 16px 48px;
+  text-align: center;
   font-size: 18px;
   font-weight: 700;
   border-radius: 28px;

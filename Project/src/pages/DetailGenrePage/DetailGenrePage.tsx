@@ -43,10 +43,10 @@ export const DetailGenrePage = () => {
         {firstCharToUpperCase(genreName)}</h1>
       <ul className="detail-genres-page__film-list film-list list-reset">
         {films.map(film => (
-            <li className="film-list__item" key={film.id} style={{ backgroundImage: `url(${film.posterUrl})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain' }}>
-              <Link className='film-list__link-to' to={`/genreFilms/${genreName}/${film.id}`} />
-            </li>
-          ))}
+          <li className="film-list__item" key={film.id} style={{ backgroundImage: `url(${film.posterUrl})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
+            <Link className='film-list__link-to' to={`/genreFilms/${genreName}/${film.id}`} />
+          </li>
+        ))}
         <Button className='detail-genres-page__btn btn btn-reset' type='button' onClick={handleMoreBtn}>Показать ещё</Button>
       </ul>
     </section>

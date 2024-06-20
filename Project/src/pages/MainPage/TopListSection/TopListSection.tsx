@@ -14,8 +14,8 @@ export const TopListSection: FC<TTopListSectionProps> = ({ films }) => {
       <h2 className="main-page-top__title">Топ 10 фильмов</h2>
       <ul className="main-page-top__film-list film-list list-reset">
         {films.map(film => (
-          <li className="film-list__item" key={film.id} style={{ backgroundImage: `url(${film.posterUrl})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain' }}>
-            <Link className='film-list__link-to' to={`/topFilms/${film.id}`}>
+          <li className="film-list__item film-list__item--top" key={film.id} style={{ backgroundImage: `url(${film.posterUrl})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
+            <Link className='film-list__link-to' to={`/topFilms/${count}/${film.id}`}>
               <span className='film-list__position'>{count++}</span>
             </Link>
           </li>

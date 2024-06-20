@@ -39,10 +39,10 @@ export const Main: FC<TMainProps> = ({ randomFilm, topFilms, user, userLoad, set
             element={<DetailGenrePage />} />
           <Route
             path='/randomFilm/:filmId'
-            element={<FilmPage randomFilm={randomFilm} user={user} setAuthActive={setAuthActive} />} />
+            element={<FilmPage user={user} setAuthActive={setAuthActive} />} />
           <Route
-            path='/topFilms/:filmId'
-            element={<FilmPage topFilms={topFilms} user={user} setAuthActive={setAuthActive} />} />
+            path='/topFilms/:count/:filmId'
+            element={<FilmPage user={user} setAuthActive={setAuthActive} />} />
           <Route
             path='/favorites/:user/:filmId'
             element={<FilmPage user={user} setAuthActive={setAuthActive} />} />
