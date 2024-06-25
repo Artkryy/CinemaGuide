@@ -7,8 +7,8 @@ import { useFavorites } from '../../hooks/useFavorites';
 
 
 interface TAccountPageProps {
-  user: User | undefined;
-  userLoad: boolean;
+  user?: User | undefined;
+  userLoad?: boolean;
 }
 
 export const AccountPage: FC<TAccountPageProps> = ({ user, userLoad }) => {
