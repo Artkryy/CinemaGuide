@@ -1,0 +1,94 @@
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form__inp {
+  padding: 16px 16px 16px 52px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.40);
+  color: var(--black-color);
+  background-color: var(--auth-bg);
+  transition: border-color .3s ease-in-out, fill .3s ease-in-out;
+}
+
+.register-form__inp::placeholder {
+  color: rgba(0, 0, 0, 0.40);
+}
+
+.register__inp-mail {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  fill: var(--black-color);
+  fill-opacity: .4;
+  transition: fill .3s ease-in-out, fill-opacity .3s ease-in-out;
+}
+
+.register__inp-key {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  fill: var(--black-color);
+  fill-opacity: .4;
+  transition: fill .3s ease-in-out, fill-opacity .3s ease-in-out;
+}
+
+.register__inp-user {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  fill: var(--black-color);
+  fill-opacity: .4;
+  transition: fill .3s ease-in-out, fill-opacity .3s ease-in-out;
+}
+
+.register-form__inp:focus-visible,
+.register-form__inp:hover {
+  border-color: var(--inp-focus);
+}
+
+.register-form__inp:valid {
+  border-color: rgba(0, 0, 0, 0.40);
+}
+
+
+.register-form__inp:focus-visible~.register__inp-mail,
+.register-form__inp:hover~.register__inp-mail {
+  fill: var(--inp-focus);
+  fill-opacity: 1;
+}
+
+.register-form__inp:valid~.register__inp-mail {
+  fill: var(--black-color);
+  fill-opacity: .4;
+}
+
+.register-form__inp:valid~.register__inp-user {
+  fill: var(--black-color);
+  fill-opacity: .4;
+}
+
+.register-form__inp:valid~.register__inp-key {
+  fill: var(--black-color);
+  fill-opacity: .4;
+}
+
+.register-form__inp:focus-visible~.register__inp-user,
+.register-form__inp:hover~.register__inp-user {
+  fill: var(--inp-focus);
+  fill-opacity: 1;
+}
+
+.register-form__inp:focus-visible~.register__inp-key,
+.register-form__inp:hover~.register__inp-key {
+  fill: var(--inp-focus);
+  fill-opacity: 1;
+}

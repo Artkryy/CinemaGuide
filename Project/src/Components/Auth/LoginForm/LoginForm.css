@@ -1,0 +1,74 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form__inp {
+  padding: 16px 16px 16px 52px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.40);
+  background-color: var(--auth-bg);
+  color: var(--black-color);
+  transition: border-color .3s ease-in-out, fill .3s ease-in-out;
+}
+
+.login-form__inp::placeholder {
+  color: rgba(0, 0, 0, 0.40);
+}
+
+.login__inp-mail {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  fill: var(--black-color);
+  fill-opacity: .4;
+  transition: fill .3s ease-in-out, fill-opacity .3s ease-in-out;
+}
+
+.login__inp-key {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  fill: var(--black-color);
+  fill-opacity: .4;
+  transition: fill .3s ease-in-out, fill-opacity .3s ease-in-out;
+}
+
+
+.login-form__inp:focus-visible,
+.login-form__inp:hover {
+  border-color: var(--inp-focus);
+}
+
+.login-form__inp:valid {
+  border-color: rgba(0, 0, 0, 0.40);
+}
+
+
+.login-form__inp:focus-visible~.login__inp-mail,
+.login-form__inp:hover~.login__inp-mail {
+  fill: var(--inp-focus);
+  fill-opacity: 1;
+}
+
+.login-form__inp:valid~.login__inp-mail {
+  fill: var(--black-color);
+  fill-opacity: .4;
+}
+
+.login-form__inp:valid~.login__inp-key {
+  fill: var(--black-color);
+  fill-opacity: .4;
+}
+
+.login-form__inp:focus-visible~.login__inp-key,
+.login-form__inp:hover~.login__inp-key {
+  fill: var(--inp-focus);
+  fill-opacity: 1;
+}

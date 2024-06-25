@@ -1,0 +1,36 @@
+.detail-genres-page {
+  padding-top: 64px;
+  padding-bottom: 160px;
+}
+
+.detail-genres-page__title {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 64px;
+  column-gap: 16px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: var(--light-color);
+}
+
+.detail-genres-page__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-genres-page__film-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: var(--gap);
+  row-gap: 64px;
+  --offsets: 4
+}
+
+.detail-genres-page__btn {
+  position: relative;
+}

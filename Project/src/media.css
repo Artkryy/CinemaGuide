@@ -1,0 +1,445 @@
+@media (max-width: 1280px) {
+  .header__logo {
+    margin-right: 20px;
+  }
+
+  .nav {
+    margin-right: 20px;
+  }
+
+  .nav__list {
+    column-gap: 20px;
+  }
+
+  .film__content {
+    width: 80%;
+  }
+
+  .header__label-search {
+    min-width: 370px;
+  }
+
+  .main-page-top__film-list {
+    --offsets: 3
+  }
+
+  .dropdown__info-list {
+    flex-wrap: wrap;
+  }
+
+  .info-list__info-item--genre:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .detail-genres-page__film-list {
+    --offsets: 3;
+  }
+
+  .account-page__film-list {
+    --offsets: 3;
+  }
+}
+
+@media (max-width: 1024px) {
+  #root {
+    padding: 0 40px;
+  }
+
+  .nav__link {
+    display: flex;
+    width: 24px;
+  }
+
+  .header__wrapper-inp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s;
+    transform: translateY(-100px);
+  }
+
+  .header__wrapper-inp.active {
+    opacity: 1;
+    transform: translate(0);
+    pointer-events: all;
+  }
+
+  .header__mobile-search {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    width: 95%;
+  }
+
+  .header__search-svg--mobile {
+    top: 44px;
+    left: 35px;
+  }
+
+  .header__close-svg {
+    position: absolute;
+    top: 31px;
+    right: 30px;
+    cursor: pointer;
+  }
+
+  .dropdown--mobile {
+    left: -20px;
+    top: 90px;
+    width: 103%;
+    z-index: 50;
+  }
+
+  .header__logo {
+    margin-right: auto;
+  }
+
+  .header__label-search {
+    margin-right: 20px;
+    min-width: 0;
+    width: 24px;
+    flex-shrink: 0;
+  }
+
+  .header__label-search::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--link-hover);
+    transform: scaleX(0);
+    transition: transform .3s, color .3s ease-in-out;
+  }
+
+  .header__label-search:focus-visible {
+    outline: 1px solid var(--link-hover);
+    outline-offset: 2px;
+  }
+
+  .header__label-search:hover::after {
+    transform: scaleX(1);
+  }
+
+  .header__btn {
+    display: flex;
+    margin-left: 0;
+    flex-shrink: 0;
+  }
+
+  .film {
+    flex-direction: column;
+  }
+
+  .film__content {
+    order: 1;
+  }
+
+  .main-page-top__film-list {
+    --offsets: 2;
+    row-gap: 32px;
+  }
+
+  .modal__content {
+    height: 50%;
+  }
+
+  .detail-genres-page__film-list {
+    --offsets: 2;
+  }
+
+  .account-page__film-list {
+    --offsets: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding: 0 20px;
+  }
+
+  .header {
+    padding: 16px 0;
+  }
+
+  .dropdown--mobile {
+    left: 0;
+    width: 100%;
+  }
+
+  .film {
+    padding: 0;
+    padding-bottom: 24px;
+  }
+
+  .film__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .film__image {
+    max-height: 360px;
+  }
+
+  .film__content {
+    width: 100%;
+  }
+
+  .action-list {
+    flex-wrap: wrap;
+  }
+
+  .film__action-list--mobile {
+    flex-wrap: nowrap;
+  }
+
+  .action-list__item--trailer {
+    width: 100%;
+  }
+
+  .account-page__film-list {
+    --offsets: 1;
+  }
+
+  .about-film {
+    padding-bottom: 40px;
+  }
+
+  .about-film__title {
+    margin-bottom: 40px;
+    font-size: 24px;
+  }
+
+  .specifications__item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .specifications__cell {
+    padding: 0;
+    padding-bottom: 4px;
+  }
+
+  .specifications__name {
+    padding: 0;
+    padding-top: 12px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: var(--dark);
+    color: var(--search-text-color);
+  }
+
+  .specifications__name-decor::after {
+    display: none;
+  }
+
+  .specifications__prop {
+    padding: 0;
+    width: 100%;
+    text-wrap: wrap;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .header__logo-img svg {
+    width: 136px;
+    height: 18px;
+  }
+
+  .header__mobile-search {
+    width: 93%;
+  }
+
+  .dropdown--mobile {
+    display: flex;
+  }
+
+  .dropdown__item--mobile {
+    flex-direction: column;
+    min-width: 220px;
+  }
+
+  .dropdown__img--mobile {
+    margin-bottom: 16px;
+    align-self: flex-start;
+    width: 158px;
+    height: 206px;
+  }
+
+  .main-page-top {
+    padding-bottom: 0;
+  }
+
+  .main-page-top__title {
+    margin: 0;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .main-page-top__film-list {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 60px 20px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: scroll;
+  }
+
+  .film__img {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .film__image {
+    width: 100%;
+  }
+
+  .film__title {
+    margin-bottom: 12px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .film__plot {
+    margin-bottom: 32px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .film__info-list {
+    margin-bottom: 12px;
+    overflow-x: scroll;
+  }
+
+  .info-list__info-item {
+    text-wrap: nowrap;
+  }
+
+  .film-list__item {
+    min-height: 502px;
+    min-width: 224px;
+  }
+
+  .film-list__item--top {
+    min-height: 336px;
+  }
+
+  .film__action-list {
+    gap: 10px;
+  }
+
+  .info-list__item--mobile {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .genres-page,
+  .detail-genres-page {
+    padding-top: 24px;
+    padding-bottom: 40px;
+  }
+
+  .genres-page__title,
+  .detail-genres-page__title {
+    margin-bottom: 40px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .detail-genres-page__title {
+    column-gap: 8px;
+  }
+
+  .genres-list,
+  .film-list {
+    row-gap: 24px;
+    --offsets: 0;
+  }
+
+  .genres-list__item {
+    width: 100%;
+  }
+
+  .detail-genres-page__btn {
+    margin: 0;
+    width: 100%;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 32px;
+  }
+
+  .footer__copy {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 10px;
+  }
+
+  .footer__copyright {
+    font-size: 14px;
+  }
+
+  .modal__content {
+    padding: 0;
+    width: 100%;
+    height: 30%;
+  }
+
+  .auth-form__close {
+    padding: 4px;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .auth-form {
+    padding: 40px 20px;
+  }
+
+  .account-page {
+    padding-bottom: 0;
+  }
+
+  .account-page__tabs {
+    margin-bottom: 7px;
+    column-gap: 24px;
+  }
+
+  .account-page__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .account-page__film-list {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 60px 20px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    justify-content: flex-start;
+    --offsets: 0;
+  }
+
+  .account-page__info {
+    padding-top: 64px;
+    padding-bottom: 80px;
+  }
+
+  .film-list__item--mobile {
+    min-height: 336px;
+  }
+}
