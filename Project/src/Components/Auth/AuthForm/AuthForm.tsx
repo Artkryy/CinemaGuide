@@ -6,8 +6,8 @@ import { Logo } from "../../../ui/Logo";
 import { SuccessRegister } from "../SuccessRegister";
 
 interface TAuthFormProps {
-  active: boolean;
-  setActive: any;
+  active?: boolean;
+  setActive?: any;
 }
 
 export const AuthForm: FC<TAuthFormProps> = ({ active, setActive }) => {
